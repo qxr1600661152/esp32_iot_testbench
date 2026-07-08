@@ -1,0 +1,17 @@
+#include <Arduino.h>
+
+void setup()
+{
+    Serial.begin(115200);
+    delay(2000);
+    Serial.println();
+    Serial.println("=== espviewproj serial smoke test ===");
+    Serial.printf("Chip %s @ %dMHz heap=%u\n",
+                  ESP.getChipModel(), getCpuFrequencyMhz(), ESP.getFreeHeap());
+}
+
+void loop()
+{
+    Serial.printf("alive %lu ms\n", millis());
+    delay(2000);
+}
